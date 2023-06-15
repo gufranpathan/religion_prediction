@@ -10,7 +10,7 @@ setup(
     package_dir={'': 'src'},
     # install_requires=['numpy >= 1.11.1', 'matplotlib >= 1.5.1'],
     install_requires=[
-        'scikit-learn==1.2.0','pandas'
+        'scikit-learn==1.2.0','pandas','pydload','unidecode'
     ],
 
 )
