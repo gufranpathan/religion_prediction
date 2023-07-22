@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='religion-prediction',
-    version='0.0.1',
+    version='1.0.1',
     # url='https://github.com/saadgulzar/india_names',
     author='Saad Gulzar, Tanushree Goyal, Feyaad Allie and Gufran Pathan',
     description='Description of my package',
