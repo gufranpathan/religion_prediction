@@ -49,20 +49,23 @@ Running the prediction algorithm:
 ```python
 from religion_prediction.prediction import ReligionPrediction
 
-religion_prediction = ReligionPrediction()
-religion_prediction.clean_and_score(names_df,'person_name')
+two_class = ReligionPrediction(model_class='two_class')
+multi_class = ReligionPrediction(model_class='multi_class')
+two_class.clean_and_score(names_df,'person_name')
+multi_class.clean_and_score(names_df,'person_name')
 names_df
+
 ```
 
 Three new columns with the 'clean' name, prediction, and probability score
 ```
 >>> names_df
 
-person_name         age gender  person_name_clean       person_name_clean_multi_pred    person_name_clean_multi_score
-ahmed khan          23  M       {AHMED}{KHAN}           Muslim                          0.99687
-Kumar Vishwas       35  M       {KUMAR}{VISHWAS}        Hindu                           0.98280
-Rabindranath Tagore 57  M       {RABINDRANATH}{TAGORE}  Hindu                           0.99499
-Razia Khatoon       12  F       {RAZIA}{KHATOON}        Muslim                          0.98558
-Yusuf Khan          32  M       {YUSUF}{KHAN}           Muslim                          0.99986
-Dilip Kumar         32  M       {DILIP}{KUMAR}          Jain                            0.97413
+person_name         age gender  person_name_clean       person_name_clean_two_pred  person_name_clean_two_pred_score    person_name_clean_multi_pred    person_name_clean_multi_score
+ahmed khan	    23	M	{AHMED}{KHAN}		1	                    0.99977	                        Muslim	                        0.99687
+Kumar Vishwas	    35	M	{KUMAR}{VISHWAS}	0	                    0.99963                     	Hindu	                        0.9828
+Rabindranath Tagore 57	M	{RABINDRANATH}{TAGORE}	0	                    0.99744	                        Hindu                           0.99499
+Razia Khatoon       12	F	{RAZIA}{KHATOON}	1	                    0.99478                     	Muslim	                        0.98558
+Yusuf Khan          32	M	{YUSUF}{KHAN}		1	                    0.99987	                        Muslim	                        0.99986
+Dilip Kumar         32	M	{DILIP}{KUMAR}		0	                    0.99731	                        Jain                            0.97413
 ```
